@@ -26,8 +26,13 @@ function Header() {
                 </Link>
             </nav>
 
-            <div>
-                <span className="header-username">UserName</span>
+            <div className="header-username">
+                <Link className="header-login" to="/signup">
+                    Sign Up
+                </Link>
+                <Link className="header-signup" to="/login">
+                    Log in
+                </Link>
             </div>
         </header>
     );

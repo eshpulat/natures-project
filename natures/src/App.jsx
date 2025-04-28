@@ -3,6 +3,8 @@ import Home from "./ui/Home";
 import AppLayot from "./ui/AppLayot";
 import Tours, { loader as tourLoader } from "./ui/Tours";
 import About from "./ui/About";
+import Signup from "./ui/Signup";
+import Login from "./ui/Login";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About />
+            },
+            {
+                path: "/signup",
+                element: <Signup />
+            },
+            {
+                path: "/login",
+                element: <Login />
             }
         ]
     }

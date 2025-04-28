@@ -8,8 +8,10 @@ header {
 }
 
 .header-nav-box {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* display: flex;
+    justify-content: space-between; */
 }
 
 .header-logo {
@@ -28,6 +30,24 @@ header {
     transition: color 0.3s ease;
 }
 
+.header-nav:hover {
+    color: #868e96;
+}
+
 .header-username {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-login {
     font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.header-signup {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
 }
