@@ -5,7 +5,9 @@ function Home() {
         <>
             <div className="home-section">
                 <h1>Wanderlust Adventures</h1>
-                <p>Your journey begins here. Discover the world with us.</p>
+                <p className="home-text">
+                    Your journey begins here. Discover the world with us.
+                </p>
             </div>
 
             <ToursSection />

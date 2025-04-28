@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { getTours } from "../services/apiTours";
+import "../css/tours.css";
 
 function Tours() {
     const tours = useLoaderData();
@@ -20,30 +21,19 @@ export async function loader() {
 }
 
 function TourItem({ tour }) {
-    const {
-        name,
-        description,
-        ratingsAverage,
-        imageCover,
-        difficulty,
-        price,
-        summary
-    } = tour;
+    const { name, ratingsAverage, imageCover, difficulty, price, summary } =
+        tour;
 
     return (
         <li>
-            <img
-                src={`/tours/${imageCover}`}
-                alt={name}
-                style={{ width: "100%", height: "auto" }}
-            />
+            <img src={`/tours/${imageCover}`} alt={name} />
             <div>
                 <h2>{name}</h2>
-                <p>{description}</p>
+                <p>{summary}</p>
                 <p>Rating: {ratingsAverage}</p>
                 <p>Difficulty: {difficulty}</p>
                 <p>Price: ${price}</p>
-                <p>{summary}</p>
+                <button className="review-btn">Review Tour</button>
             </div>
         </li>
     );
