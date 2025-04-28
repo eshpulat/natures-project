@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./ui/Home";
 import AppLayot from "./ui/AppLayot";
-import Tours from "./ui/Tours";
+import Tours, { loader as tourLoader } from "./ui/Tours";
 import About from "./ui/About";
 
 const router = createBrowserRouter([
@@ -14,7 +14,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/tours",
-                element: <Tours />
+                element: <Tours />,
+                loader: tourLoader
             },
             {
                 path: "/about",
