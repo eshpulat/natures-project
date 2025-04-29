@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Home from "./Home";
+import { useNavigate } from "react-router-dom";
+import "../css/login.css";
 
 function Login() {
     const [token, setToken] = useState(null);
     const [email, setEmailForm] = useState("");
     const [password, setPasswordForm] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const savedToken = localStorage.getItem("authToken");
@@ -27,6 +29,8 @@ function Login() {
             const token = response.data.token;
             localStorage.setItem("authToken", token);
             setToken(token);
+            alert("You are Loged in");
+            navigate("/");
         } catch (error) {
             console.error(
                 "Login failed:",
@@ -36,22 +40,24 @@ function Login() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmailForm(e.target.value)}
-                placeholder="Email"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPasswordForm(e.target.value)}
-                placeholder="Password"
-            />
-            <button onClick={handleSubmit} type="submit">
-                Submit
-            </button>
+        <form className="login-container" onSubmit={handleSubmit}>
+            <div className="login-box">
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmailForm(e.target.value)}
+                    placeholder="Email"
+                />
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPasswordForm(e.target.value)}
+                    placeholder="Password"
+                />
+                <button onClick={handleSubmit} type="submit">
+                    Submit
+                </button>
+            </div>
         </form>
     );
 }
