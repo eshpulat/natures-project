@@ -1,62 +1,42 @@
+import React, { useState } from "react";
+import "../css/signup.css";
+
 function Signup() {
-    return <div>Signip</div>;
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSignup = () => {
+        console.log("Signing up with:", { username, email, password });
+    };
+
+    return (
+        <div className="login-container">
+            <div className="login-box">
+                <h2>Sign Up</h2>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button onClick={handleSignup}>Sign Up</button>
+                <p>Already have an account? Log in</p>
+            </div>
+        </div>
+    );
 }
 
 export default Signup;
-
-// // SignupForm.js
-// import React, { useState } from "react";
-// import axios from "axios";
-
-// function Signup() {
-//     const [formData, setFormData] = useState({
-//         username: "",
-//         email: "",
-//         password: ""
-//     });
-
-//     const handleChange = (e) => {
-//         setFormData({ ...formData, [e.target.name]: e.target.value });
-//     };
-
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-//         try {
-//             const res = await axios.post(
-//                 "http://127.0.0.1:3000/api/v1/users/signup",
-//                 formData
-//             );
-//             alert("Signup successful!");
-//         } catch (err) {
-//             alert("Signup failed. " + (err.response?.data?.message || ""));
-//         }
-//     };
-
-//     return (
-//         <form onSubmit={handleSubmit}>
-//             <input
-//                 name="username"
-//                 placeholder="Username"
-//                 onChange={handleChange}
-//                 required
-//             />
-//             <input
-//                 name="email"
-//                 type="email"
-//                 placeholder="Email"
-//                 onChange={handleChange}
-//                 required
-//             />
-//             <input
-//                 name="password"
-//                 type="password"
-//                 placeholder="Password"
-//                 onChange={handleChange}
-//                 required
-//             />
-//             <button type="submit">Sign Up</button>
-//         </form>
-//     );
-// }
-
-// export default Signup;
