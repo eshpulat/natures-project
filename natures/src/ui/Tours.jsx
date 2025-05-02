@@ -33,7 +33,11 @@ export function TourItem({ tour }) {
 
     return (
         <li>
-            <img src={`/tours/${imageCover}`} alt={name} />
+            <img
+                className="tours-image"
+                src={`/tours/${imageCover}`}
+                alt={name}
+            />
             <div>
                 <h2>{name}</h2>
                 <p>{summary}</p>
