@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function AppLayot() {
     return (
@@ -11,7 +12,8 @@ function AppLayot() {
                 <Outlet />
             </main>
 
-            <footer>Footer</footer>
+            <Footer />
+            {/* <footer>Footer</footer> */}
         </div>
     );
 }

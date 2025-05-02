@@ -35,10 +35,15 @@ function Header() {
 
             <div className="auth-buttons">
                 {user ? (
-                    <>
-                        <p>Welcome, {user.name}!</p>
-                        <button onClick={handleLogout}>Logout</button>
-                    </>
+                    <div className="auth-user-info">
+                        <p className="auth-name"> {user.name.toUpperCase()}!</p>
+                        <button
+                            className="logout-button"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </div>
                 ) : (
                     <>
                         <Link className="auth-button signup" to="/signup">
