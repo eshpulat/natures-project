@@ -1,6 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { getTours } from "../services/apiTours";
 import "../css/tours.css";
+import GetTour from "./TourDetales";
 
 function Tours() {
     const tours = useLoaderData();
@@ -20,9 +21,15 @@ export async function loader() {
     return tours;
 }
 
-function TourItem({ tour }) {
-    const { name, ratingsAverage, imageCover, difficulty, price, summary } =
+export function TourItem({ tour }) {
+    const { id, name, ratingsAverage, imageCover, difficulty, price, summary } =
         tour;
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        console.log("Tour ID:", id);
+        navigate(`/tours/${tour._id}`);
+    };
 
     return (
         <li>
@@ -33,7 +40,9 @@ function TourItem({ tour }) {
                 <p>Rating: {ratingsAverage}</p>
                 <p>Difficulty: {difficulty}</p>
                 <p>Price: ${price}</p>
-                <button className="review-btn">Review Tour</button>
+                <button onClick={handleClick} className="review-btn">
+                    Review Tour
+                </button>
             </div>
         </li>
     );

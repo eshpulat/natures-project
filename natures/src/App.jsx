@@ -5,6 +5,8 @@ import Tours, { loader as tourLoader } from "./ui/Tours";
 import About from "./ui/About";
 import Signup from "./ui/Signup";
 import Login from "./ui/Login";
+import GetTour from "./ui/TourDetales";
+import TourDetails from "./ui/TourDetales";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
+            },
+            {
+                path: "/tours/:id",
+                element: <TourDetails />
             }
         ]
     }

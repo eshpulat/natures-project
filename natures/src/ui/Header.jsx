@@ -26,11 +26,11 @@ function Header() {
                 </Link>
             </nav>
 
-            <div className="header-username">
-                <Link className="header-login" to="/signup">
+            <div className="auth-buttons">
+                <Link className="auth-button signup" to="/signup">
                     Sign Up
                 </Link>
-                <Link className="header-signup" to="/login">
+                <Link className="auth-button login" to="/login">
                     Log in
                 </Link>
             </div>

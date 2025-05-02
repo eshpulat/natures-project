@@ -34,20 +34,41 @@ header {
     color: #868e96;
 }
 
-.header-username {
+/***********  Button   **************/
+
+.auth-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
 }
 
-.header-login {
-    font-size: 20px;
-    color: white;
+.auth-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
     text-decoration: none;
 }
 
-.header-signup {
-    font-size: 20px;
+/* Login Button Style */
+.auth-button.login {
+    background-color: #4a90e2;
     color: white;
-    text-decoration: none;
-    margin-left: 15px;
+}
+
+.auth-button.login:hover {
+    background-color: #357bd8;
+}
+
+/* Signup Button Style */
+.auth-button.signup {
+    background-color: #e2e2e2;
+    color: #333;
+}
+
+.auth-button.signup:hover {
+    background-color: #ccc;
 }
