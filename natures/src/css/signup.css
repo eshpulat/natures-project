@@ -1,100 +1,48 @@
-/* Auth.css
-.login-container {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 350px;
-}
-
-.login-box h2 {
-    margin-bottom: 25px;
-    text-align: center;
-    color: #333;
-}
-
-.login-box input {
-    width: 91%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.login-box button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-box button:hover {
-    background-color: #357bd8;
-}
-
-.login-box p {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: #666;
-} */
-
 form {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 2rem;
+    max-width: 50rem;
+    margin: 100px auto;
+    padding: 3rem;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
 }
 
 form h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: #333;
+    font-size: 2rem;
 }
 
 form input {
-    padding: 0.75rem;
+    padding: 1rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.8rem;
     transition: border 0.3s ease;
 }
 
 form input:focus {
     border-color: #0f88eb;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(2, 103, 226, 0.2);
+    box-shadow: 0 0 0 3px rgba(2, 103, 226, 0.2);
 }
 
 form button {
-    padding: 0.75rem;
+    padding: 1rem;
     background-color: #4a90e2;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 form button:hover {

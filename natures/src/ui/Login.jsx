@@ -40,7 +40,7 @@ function Login() {
     };
 
     return (
-        <form className="login-container" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="login-box">
                 <input
                     type="email"
