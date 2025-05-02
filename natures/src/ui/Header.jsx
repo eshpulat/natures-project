@@ -10,7 +10,7 @@ function Header() {
 
     const handleLogout = () => {
         localStorage.removeItem("user");
-        navigate("/"); // Go back to home
+        navigate("/");
     };
     return (
         <header>
