@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Tours from "./Tours";
 import Home from "./Home";
 import "../css/header.css";
 import About from "./About";
 
 function Header() {
+    const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        navigate("/"); // Go back to home
+    };
     return (
         <header>
             <div>
@@ -27,12 +34,21 @@ function Header() {
             </nav>
 
             <div className="auth-buttons">
-                <Link className="auth-button signup" to="/signup">
-                    Sign Up
-                </Link>
-                <Link className="auth-button login" to="/login">
-                    Log in
-                </Link>
+                {user ? (
+                    <>
+                        <p>Welcome, {user.name}!</p>
+                        <button onClick={handleLogout}>Logout</button>
+                    </>
+                ) : (
+                    <>
+                        <Link className="auth-button signup" to="/signup">
+                            Sign Up
+                        </Link>
+                        <Link className="auth-button login" to="/login">
+                            Log in
+                        </Link>
+                    </>
+                )}
             </div>
         </header>
     );
